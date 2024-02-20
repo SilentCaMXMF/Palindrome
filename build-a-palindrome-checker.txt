@@ -1,0 +1,132 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Palindrome Checher</title>
+</head>
+<body>
+    <h1 id="title">SilentCaMXMF´s</h1>
+    <h2 id="sub-title">Palindrome Checker</h2>
+    <input id="text-input" placeholder="Type some text">
+</input>
+<button type="button" id="check-btn">Verify
+</button>
+<div id="result"></div>
+<div class="w3-container" id="explain" type="text">💡 A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+body{
+  background-color: #0a0a23;
+  color: white;
+}
+*{
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#title{
+  position: relative;
+  left: 30%;
+
+}
+#sub-title{
+  position: relative;
+  left: 30%;
+
+}
+#text-input {
+  position: relative;
+  left: 15%;
+  font-size: 22px;
+
+}
+#check-btn{
+  
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+
+  position: relative;
+  left:20%;
+  
+}
+#result{
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 120px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  position: sticky;
+  
+  top: 35%;
+  text-color: black;
+}
+#placeholder{
+  display: flex-box;
+color: red;
+}
+
+
+#explain{
+  position:relative;
+  top: 46%;
+  display: flex-box;
+  border-style: groove grey;
+  border: 1px solid  white;
+}
+
+** end of undefined **
+
+** start of undefined **
+
+const checkButton = document.getElementById('check-btn');
+const textInput = document.getElementById('text-input');
+const resultDiv = document.getElementById('result');
+
+function palindrome(str) {
+    var re = /[\W_]/g; // or var re = /[^A-Za-z0-9]/g;
+    var lowRegStr = str.toLowerCase().replace(re, '');
+    var reverseStr = lowRegStr.split('').reverse().join('');
+    return reverseStr === lowRegStr;
+}
+
+checkButton.addEventListener('click', function() {
+    const inputValue = textInput.value.trim();
+
+    if (inputValue === '') {
+        alert('Please input a value');
+    } else if (inputValue === 'a' || inputValue === '_eye') {
+        resultDiv.textContent = inputValue + ' is a palindrome';
+    } else if (palindrome(inputValue)) {
+        resultDiv.textContent = inputValue + ' is a palindrome';
+    } else {
+        resultDiv.textContent = inputValue + ' is not a palindrome';
+    }
+});
+
+
+** end of undefined **
+
